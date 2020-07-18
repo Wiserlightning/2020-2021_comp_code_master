@@ -7,15 +7,14 @@
 //      Neil Sachdeva (wiserlightning090@gmail.com)
 //
 // Purpose:
-//      This is the file for all code related to the initialization section of
-//      the competition code.
+//      This is the header file for all intake-related variables and functions.
+//      Functions are defined here and are declared in 
+//      "subsystemFiles/intake.cpp".
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "main.h"
-#include "globals.h"
+#ifndef INTAKE_H_
+#define INTAKE_H_
 
 
-void initialize(void) {
-    
-}
+#endif // INTAKE_H_

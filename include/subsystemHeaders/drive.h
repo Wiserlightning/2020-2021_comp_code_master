@@ -7,15 +7,15 @@
 //      Neil Sachdeva (wiserlightning090@gmail.com)
 //
 // Purpose:
-//      This is the file for all code related to the initialization section of
-//      the competition code.
+//      This is the header file for all drive-related variables and functions.
+//      Functions are defined here and are declared in 
+//      "subsystemFiles/drive.cpp".
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "main.h"
-#include "globals.h"
+#ifndef DRIVE_H_
+#define DRIVE_H_
 
+extern void SetDrive(void);
 
-void initialize(void) {
-    
-}
+#endif // DRIVE_H_

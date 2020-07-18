@@ -1,12 +1,44 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// Discobots 2020-2021 Competition Code
+//
+// Authors:
+//      Marco Tan (marco.tan.200405@gmail.com)
+//      Neil Sachdeva (wiserlightning090@gmail.com)
+//
+// Purpose:
+//      This is the file for global variable declarations of global variables
+//      defined in the header file "globals.h"
+//
+///////////////////////////////////////////////////////////////////////////////
+
 #include "main.h"
+#include "globals.h"
 
-//Motors
-pros::Motor driveLeftBack(18, pros::E_MOTOR_GEARSET_18, false, pros::motor_encoder_units_e::E_MOTOR_ENCODER_COUNTS);
-pros::Motor driveLeftMiddle(19, pros::E_MOTOR_GEARSET_18, false, pros::motor_encoder_units_e::E_MOTOR_ENCODER_COUNTS);
-pros::Motor driveLeftFront(20, pros::E_MOTOR_GEARSET_18, false, pros::motor_encoder_units_e::E_MOTOR_ENCODER_COUNTS);
-pros::Motor driveRightBack(8, pros::E_MOTOR_GEARSET_18, true, pros::motor_encoder_units_e::E_MOTOR_ENCODER_COUNTS);
-pros::Motor driveRightMiddle(9, pros::E_MOTOR_GEARSET_18, true, pros::motor_encoder_units_e::E_MOTOR_ENCODER_COUNTS);
-pros::Motor driveRightFront(10, pros::E_MOTOR_GEARSET_18, true, pros::motor_encoder_units_e::E_MOTOR_ENCODER_COUNTS);
+using namespace okapi::literals;
 
-//Controller
-pros::Controller controller(pros::E_CONTROLLER_MASTER);
+
+// Drive Declaration
+
+std::shared_ptr<okapi::ChassisController> drive_chassis = okapi::ChassisControllerBuilder()
+    .withMotors(
+        {kMotorDriveLeftBack, kMotorDriveLeftMiddle, kMotorDriveLeftFront},
+        {-kMotorDriveRightBack, -kMotorDriveRightMiddle, -kMotorDriveRightFront}
+    )
+    .withDimensions(k200GearCartridge, {{4_in, 10_in}, okapi::imev5GreenTPR})
+    .withSensors(
+        okapi::ADIEncoder{'A', 'B'},
+        okapi::ADIEncoder{'C', 'D', true}
+    )
+    .build();
+
+
+// Motor Object Declarations
+
+okapi::Motor motor_intake(kMotorIntake, false, k100GearCartridge, kEncoderUnitTicks);
+okapi::Motor motor_conveyor(kMotorConveyor, false, k600GearCartridge, kEncoderUnitTicks);
+
+
+// Miscellaneous Object Declarations
+
+okapi::Controller main_controller(okapi::ControllerId::master);

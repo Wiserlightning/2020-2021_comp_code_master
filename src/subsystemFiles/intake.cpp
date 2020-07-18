@@ -7,15 +7,10 @@
 //      Neil Sachdeva (wiserlightning090@gmail.com)
 //
 // Purpose:
-//      This is the file for all code related to the initialization section of
-//      the competition code.
+//      This is the file for all code related to the functioning of the intake
+//      on the robot.
 //
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
 #include "globals.h"
-
-
-void initialize(void) {
-    
-}

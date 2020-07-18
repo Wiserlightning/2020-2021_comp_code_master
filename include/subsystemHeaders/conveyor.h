@@ -7,15 +7,14 @@
 //      Neil Sachdeva (wiserlightning090@gmail.com)
 //
 // Purpose:
-//      This is the file for all code related to the initialization section of
-//      the competition code.
+//      This is the header file for all conveyor-related variables and functions.
+//      Functions are defined here and are declared in 
+//      "subsystemFiles/conveyor.cpp".
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "main.h"
-#include "globals.h"
+#ifndef CONVEYOR_H_
+#define CONVEYOR_H_
 
 
-void initialize(void) {
-    
-}
+#endif // CONVEYOR_H_
