@@ -16,6 +16,9 @@
 #ifndef DRIVE_H_
 #define DRIVE_H_
 
+// Operator Control Drive Function Definition
+
 extern void SetDrive(void);
+
 
 #endif // DRIVE_H_

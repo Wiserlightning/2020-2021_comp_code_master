@@ -22,10 +22,11 @@
 
 // Motor Variable Constants
 
-const auto k100GearCartridge = okapi::AbstractMotor::gearset::red;
-const auto k200GearCartridge = okapi::AbstractMotor::gearset::green;
-const auto k600GearCartridge = okapi::AbstractMotor::gearset::blue;
+const auto kRedGearCartridge = okapi::AbstractMotor::gearset::red;
+const auto kGreenGearCartridge = okapi::AbstractMotor::gearset::green;
+const auto kBlueGearCartridge = okapi::AbstractMotor::gearset::blue;
 const auto kEncoderUnitTicks = okapi::AbstractMotor::encoderUnits::counts;
+const auto kBreakModeHold = okapi::AbstractMotor::brakeMode::hold;
 
 
 // Controller Variable Constants
@@ -60,6 +61,20 @@ const int kMotorIntake = 1;
 const int kMotorConveyor = 2;
 
 
+// Drive-related Constants
+
+const double kDriveControlDeadzone = 10.0;
+const double kMotionProfileMaxLinVel = 1.0;
+const double kMotionProfileMaxLinAccel = 2.0;
+const double kMotionProfileMaxLinJerk = 10.0;
+
+
+// Miscellaneous Constants
+
+const int kIndexTime = 1 * 1000;
+const int kIntakePullTime = 2 * 1000;
+
+
 // Motor Object Definitions
 
 extern okapi::Motor motor_intake;
@@ -68,15 +83,12 @@ extern okapi::Motor motor_conveyor;
 // Drive-related Object Definitions
 
 extern std::shared_ptr<okapi::ChassisController> drive_chassis;
+extern std::shared_ptr<okapi::AsyncMotionProfileController> motion_profiler;
 
 
 // Miscellaneous Object Definitions
 
 extern okapi::Controller main_controller;
 
-
-// Miscellaneous Constant Declarations
-
-const double kDriveControlDeadzone = 10.0;
 
 #endif // GLOBALS_H_

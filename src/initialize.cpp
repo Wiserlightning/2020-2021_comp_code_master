@@ -13,9 +13,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
+
 #include "globals.h"
 
 
 void initialize(void) {
-    
+    motor_conveyor.setBrakeMode(kBreakModeHold);
+    motor_intake.setBrakeMode(kBreakModeHold);
 }

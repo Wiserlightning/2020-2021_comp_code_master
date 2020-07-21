@@ -13,15 +13,20 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
+
 #include "globals.h"
 #include "subsystemHeaders/drive.h"
 
-// Main Drive Function Declaration
+
+// Operator Control Drive Function Declaration
 
 void SetDrive(void) {
-    drive_chassis->getModel()->arcade(
-        main_controller.getAnalog(kControllerJoyLeftY),
-        main_controller.getAnalog(kControllerJoyLeftX),
-        kDriveControlDeadzone
-    );
+    while (true) {
+        drive_chassis->getModel()->arcade(
+            main_controller.getAnalog(kControllerJoyRightY),
+            main_controller.getAnalog(kControllerJoyRightX),
+            kDriveControlDeadzone
+        );
+        pros::delay(20);
+    }
 }

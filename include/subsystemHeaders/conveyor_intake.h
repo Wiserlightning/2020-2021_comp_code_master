@@ -7,10 +7,18 @@
 //      Neil Sachdeva (wiserlightning090@gmail.com)
 //
 // Purpose:
-//      This is the file for all code related to the functioning of the intake
-//      on the robot.
+//      This is the header file for all conveyor and intake-related functions.
+//      Functions are defined here and are declared in 
+//      "subsystemFiles/conveyor.cpp".
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "main.h"
-#include "globals.h"
+#ifndef CONVEYOR_H_
+#define CONVEYOR_H_
+
+
+// Operator Control Conveyor-Intake Function Definition
+
+extern void SetConveyorIntake(void);
+
+#endif // CONVEYOR_H_

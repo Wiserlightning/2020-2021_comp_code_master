@@ -13,6 +13,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
+
 #include "globals.h"
 
 using namespace okapi::literals;
@@ -20,12 +21,13 @@ using namespace okapi::literals;
 
 // Drive Declaration
 
-std::shared_ptr<okapi::ChassisController> drive_chassis = okapi::ChassisControllerBuilder()
+std::shared_ptr<okapi::ChassisController> drive_chassis = 
+    okapi::ChassisControllerBuilder()
     .withMotors(
         {kMotorDriveLeftBack, kMotorDriveLeftMiddle, kMotorDriveLeftFront},
         {-kMotorDriveRightBack, -kMotorDriveRightMiddle, -kMotorDriveRightFront}
     )
-    .withDimensions(k200GearCartridge, {{4_in, 10_in}, okapi::imev5GreenTPR})
+    .withDimensions(kGreenGearCartridge, {{4_in, 10.01_in}, okapi::imev5GreenTPR})
     .withSensors(
         okapi::ADIEncoder{'A', 'B'},
         okapi::ADIEncoder{'C', 'D', true}
@@ -33,12 +35,26 @@ std::shared_ptr<okapi::ChassisController> drive_chassis = okapi::ChassisControll
     .build();
 
 
+// Autonomous Drive Declaration
+
+std::shared_ptr<okapi::AsyncMotionProfileController> motion_profiler = 
+    okapi::AsyncMotionProfileControllerBuilder()
+    .withLimits({
+        kMotionProfileMaxLinVel,
+        kMotionProfileMaxLinAccel,
+        kMotionProfileMaxLinJerk
+    })
+    .withOutput(drive_chassis)
+    .buildMotionProfileController();
+
+
 // Motor Object Declarations
 
-okapi::Motor motor_intake(kMotorIntake, false, k100GearCartridge, kEncoderUnitTicks);
-okapi::Motor motor_conveyor(kMotorConveyor, false, k600GearCartridge, kEncoderUnitTicks);
+okapi::Motor motor_intake(kMotorIntake, false, kRedGearCartridge, kEncoderUnitTicks);
+okapi::Motor motor_conveyor(kMotorConveyor, false, kBlueGearCartridge, kEncoderUnitTicks);
 
 
 // Miscellaneous Object Declarations
 
 okapi::Controller main_controller(okapi::ControllerId::master);
+

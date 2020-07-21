@@ -13,9 +13,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
+
 #include "globals.h"
+#include "subsystemHeaders/conveyor_intake.h"
+#include "subsystemHeaders/drive.h"
 
 
 void opcontrol(void) {
-   
+    pros::Task conveyor_intake_task(SetConveyorIntake, "ConveyorIntake Task");
+    pros::Task drive_task(SetDrive, "Drive Task");
 }
