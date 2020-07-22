@@ -58,3 +58,13 @@ okapi::Motor motor_conveyor(kMotorConveyor, false, kBlueGearCartridge, kEncoderU
 
 okapi::Controller main_controller(okapi::ControllerId::master);
 
+
+// Autonomous Object Declarations
+
+auto conveyor_control_pos = okapi::AsyncPosControllerBuilder()
+    .withMotor(motor_conveyor)
+    .build();
+
+auto intake_control_pos = okapi::AsyncPosControllerBuilder()
+    .withMotor(motor_intake)
+    .build();

@@ -80,10 +80,17 @@ const int kIntakePullTime = 2 * 1000;
 extern okapi::Motor motor_intake;
 extern okapi::Motor motor_conveyor;
 
+
 // Drive-related Object Definitions
 
 extern std::shared_ptr<okapi::ChassisController> drive_chassis;
 extern std::shared_ptr<okapi::AsyncMotionProfileController> motion_profiler;
+
+
+// Autonomous Object Definitions
+
+extern std::shared_ptr<okapi::AsyncPositionController<double, double>> conveyor_control_pos;
+extern std::shared_ptr<okapi::AsyncPositionController<double, double>> intake_control_pos;
 
 
 // Miscellaneous Object Definitions

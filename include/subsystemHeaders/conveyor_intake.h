@@ -21,4 +21,20 @@
 
 extern void SetConveyorIntake(void);
 
+
+// Autonomous Control Conveyor Function Definition
+
+extern void AutonSetConveyor(double pos_);
+extern void AutonSetConveyor(double pos_, int speed_);
+extern void AutonSetConveyor(double pos_, bool async_wait_);
+extern void AutonSetConveyor(double pos_, int speed_, bool async_wait_);
+
+
+// Autonomous Control Intake Function Definition
+
+extern void AutonSetIntake(double pos_);
+extern void AutonSetIntake(double pos_, int speed_);
+extern void AutonSetIntake(double pos_, bool async_wait_);
+extern void AutonSetIntake(double pos_, int speed_, bool async_wait_);
+
 #endif // CONVEYOR_H_

@@ -93,3 +93,48 @@ void SetConveyorIntake(void) {
     }
 }
 
+
+// Autonomous Conveyor Function Declaration
+
+void AutonSetConveyor(double pos_) {
+    conveyor_control_pos->setTarget(pos_);
+}
+
+void AutonSetConveyor(double pos_, int speed_) {
+    conveyor_control_pos->setMaxVelocity(speed_);
+    conveyor_control_pos->setTarget(pos_);
+}
+
+void AutonSetConveyor(double pos_, bool async_wait_) {
+    conveyor_control_pos->setTarget(pos_);
+    conveyor_control_pos->waitUntilSettled();
+}
+
+void AutonSetConveyor(double pos_, int speed_, bool async_wait_) {
+    conveyor_control_pos->setMaxVelocity(speed_);
+    conveyor_control_pos->setTarget(pos_);
+    conveyor_control_pos->waitUntilSettled();
+}
+
+
+// Autonomous Intake Function Declaration
+
+void AutonSetIntake(double pos_) {
+    intake_control_pos->setTarget(pos_);
+}
+
+void AutonSetIntake(double pos_, int speed_) {
+    intake_control_pos->setMaxVelocity(speed_);
+    intake_control_pos->setTarget(pos_);
+}
+
+void AutonSetIntake(double pos_, bool async_wait_) {
+    intake_control_pos->setTarget(pos_);
+    intake_control_pos->waitUntilSettled();
+}
+
+void AutonSetIntake(double pos_, int speed_, bool async_wait_) {
+    intake_control_pos->setMaxVelocity(speed_);
+    intake_control_pos->setTarget(pos_);
+    intake_control_pos->waitUntilSettled();
+}
