@@ -7,17 +7,18 @@
 //      Neil Sachdeva (wiserlightning090@gmail.com)
 //
 // Purpose:
-//      This is the file for all code related to the initialization section of
-//      the competition code.
+//      This is the header file for all drive-related variables and functions.
+//      Functions are defined here and are declared in 
+//      "subsystemFiles/drive.cpp".
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "main.h"
+#ifndef DRIVE_H_
+#define DRIVE_H_
 
-#include "globals.h"
+// Operator Control Drive Function Definition
+
+extern void SetDrive(void);
 
 
-void initialize(void) {
-    motor_conveyor.setBrakeMode(kBreakModeHold);
-    motor_intake.setBrakeMode(kBreakModeHold);
-}
+#endif // DRIVE_H_
