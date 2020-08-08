@@ -13,10 +13,18 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
-
+#include "initialize.cpp"
 #include "globals.h"
+#include "subsystemHeaders/drive.h"
+#include "subsystemHeaders/conveyor_intake.h"
+
+void nine_point(void){
+    pros::delay(10);
+    
+}
 
 
 void autonomous(void) {
-    
-}
+  
+      
+  }

@@ -53,12 +53,12 @@ const auto kControllerButRight = okapi::ControllerDigital::right;
 
 const int kMotorDriveLeftBack = 18;
 const int kMotorDriveLeftMiddle = 19;
-const int kMotorDriveLeftFront = 20;
+const int kMotorDriveLeftFront = 10;
 const int kMotorDriveRightBack = 8;
 const int kMotorDriveRightMiddle = 9;
-const int kMotorDriveRightFront = 10;
-const int kMotorIntake = 1;
-const int kMotorConveyor = 2;
+const int kMotorDriveRightFront = 20;
+const int kMotorIntake = 6;
+const int kMotorConveyor = 7;
 
 
 // Drive-related Constants
@@ -96,6 +96,12 @@ extern std::shared_ptr<okapi::AsyncPositionController<double, double>> intake_co
 // Miscellaneous Object Definitions
 
 extern okapi::Controller main_controller;
+
+//Initialize Values
+
+extern const std::vector<std::string> possible_autons;
+extern const unsigned num_of_autons;
+extern std::string sel_auton;
 
 
 #endif // GLOBALS_H_

@@ -30,7 +30,7 @@ std::shared_ptr<okapi::ChassisController> drive_chassis =
     .withDimensions(kGreenGearCartridge, {{4_in, 10.01_in}, okapi::imev5GreenTPR})
     .withSensors(
         okapi::ADIEncoder{'A', 'B'},
-        okapi::ADIEncoder{'C', 'D', true}
+        okapi::ADIEncoder{'G', 'H', true}
     )
     .build();
 
